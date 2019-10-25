@@ -9,21 +9,26 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      settings:
-      {DefCurrency:"USD",
-      AccMeth:"FIFO",
-      SMSNotification: true,
-      EmailNotification: true,
-      ProfilePrivate: true,
-      SearchPrivate:false,
-      Theme:"The Purps"}
+      "Default Currency":"USD",
+      "Accounting Methodology":"FIFO",
+      "SMS Notifications": true,
+      "Email Notifications": true,
+      "Make Profile Private": true,
+      "Search Privacy":false,
+      Theme:"The Purps"
     };
   }
-  render() {
+  updateToggle(settingName){
+    this.setState({
+      settingName: !this.state.settingName
+    })
+    console.log(settingName)
+  }
+    render() {
     return (
       <div className="App">
         <SideNav />
-        <Settings settingStates={this.state.settings} sections={this.props.settingInfo}/>
+        <Settings settingStates={this.state} sections={this.props.settingInfo} handleToggle={(settingName) => this.updateToggle(settingName)}/>
       </div>
     );
   }

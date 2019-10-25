@@ -10,10 +10,10 @@ class Settings extends React.Component {
         return(
             <div className="Settings">
                 <SettingHeader />
-                <SettingMain settingStates={this.props.settingStates} sections={this.props.sections} />
+                <SettingMain settingStates={this.props.settingStates} sections={this.props.sections} handleToggle={this.props.handleToggle}/>
             </div>
         )
     }
 }
 
-export default settings
+export default Settings
