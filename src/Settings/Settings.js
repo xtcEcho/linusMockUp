@@ -6,11 +6,14 @@ import SettingMain from '../SettingMain/SettingMain'
 
 class Settings extends React.Component {
     render(){
+
         return(
             <div className="Settings">
                 <SettingHeader />
-                <SettingMain settingStates={this.props.settingStates} settingInfo={this.props.settingInfo} />
+                <SettingMain settingStates={this.props.settingStates} sections={this.props.sections} />
             </div>
         )
     }
 }
+
+export default settings

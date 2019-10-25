@@ -5,6 +5,7 @@ import SideNav from "./SideNav/SideNav"
 import Settings from "./Settings/Settings"
 
 class App extends React.Component {
+  //set default setting 
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +23,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <SideNav />
-        <Settings settingStates={this.state.settings} settingInfo={this.props.settingInfo}/>
+        <Settings settingStates={this.state.settings} sections={this.props.settingInfo}/>
       </div>
     );
   }
